@@ -1,4 +1,8 @@
 {
-  "**/*.{mjs,ts,tsx,md,mdx}": ["eslint --fix"],
-  "**/*.{mjs,ts,tsx,md,mdx,json,yml,css,sass,scss}": ["prettier --write"]
+  "**/*.{js,mjs,ts,tsx,md,mdx}": [
+    "turbo run lint:lint-staged --",
+    "prettier --check --write"
+  ],
+  "**/*.css": ["stylelint --allow-empty-input", "prettier --write"],
+  "**/*.{json,yml}": ["prettier --check --write"]
 }
